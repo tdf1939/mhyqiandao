@@ -31,7 +31,7 @@ while 1:
 
     times = time.strftime('%Y.%m.%d %H:%M:%S ', time.localtime(time.time()))
 
-    print(times, "开始执行每日签到,Start...")
+    print(times, "开始执行游戏社区签到,Start")
     bh3 = requests.post(url, headers=headers, json=bh3payload)
     print(times, "崩坏3-米游社回显:", bh3.json()["message"])
     ys = requests.post(url, headers=headers, json=yspayload)
@@ -39,10 +39,10 @@ while 1:
     bh2 = requests.post(url, headers=headers, json=bh2payload)
     print(times, "崩坏2-米游社回显:", bh2.json()["message"])
     wd = requests.post(url, headers=headers, json=wdpayload)
-    print(times, "未定事件簿2-米游社回显:", wd.json()["message"])
+    print(times, "未定事件簿-米游社回显:", wd.json()["message"])
     dby = requests.post(url, headers=headers, json=dbypayload)
     print(times, "大别墅-米游社回显:", dby.json()["message"])
 
-    print(times, "任务完成,休眠", setime, "秒")
+    print(times, "任务执行完成,休眠", setime, "秒...")
 
     time.sleep(setime)
