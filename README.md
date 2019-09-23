@@ -1,4 +1,4 @@
-# mhyqiandao   Python3+
+# mhyqiandao   Python3.6+
 米游社 每日签到 
 
 崩坏3  √ </br>
