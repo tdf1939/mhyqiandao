@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 import requests
+import json
 import time
 
 
@@ -30,17 +31,17 @@ while 1:
 
     times = time.strftime('%Y.%m.%d %H:%M:%S ', time.localtime(time.time()))
 
-    print(times, "开始执行 Start...")
+    print(times, "开始执行每日签到,Start...")
     bh3 = requests.post(url, headers=headers, json=bh3payload)
-    print(times, "米游社-崩坏3回显", bh3.text)
+    print(times, "崩坏3-米游社回显:", bh3.json()["message"])
     ys = requests.post(url, headers=headers, json=yspayload)
-    print(times, "米游社-原神回显", ys.text)
+    print(times, "原神-米游社回显:", ys.json()["message"])
     bh2 = requests.post(url, headers=headers, json=bh2payload)
-    print(times, "米游社-崩坏2回显", bh2.text)
+    print(times, "崩坏2-米游社回显:", bh2.json()["message"])
     wd = requests.post(url, headers=headers, json=wdpayload)
-    print(times, "米游社-未定事件簿2回显", wd.text)
+    print(times, "未定事件簿2-米游社回显:", wd.json()["message"])
     dby = requests.post(url, headers=headers, json=dbypayload)
-    print(times, "米游社-大别墅回显", dby.text)
+    print(times, "大别墅-米游社回显:", dby.json()["message"])
 
     print(times, "任务完成,休眠", setime, "秒")
 
