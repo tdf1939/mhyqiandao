@@ -3,8 +3,13 @@ import requests
 import time
 
 
+#填写cookie,自己登陆https://bbs.mihoyo.com/bh3/  F12进行抓取
 cookie = ""
 
+#休眠时间 单位/秒
+setime = 21600
+
+#参数，不要修改
 bh3payload = {"gids": "1"} #崩坏3
 yspayload = {"gids": "2"} #原神
 bh2payload = {"gids": "3"} #崩坏2
@@ -37,6 +42,6 @@ while 1:
     dby = requests.post(url, headers=headers, json=dbypayload)
     print(times, "米游社-大别墅回显", dby.text)
 
-    print(times, "休眠六小时...")
+    print(times, "任务完成,休眠", setime, "秒")
 
-    time.sleep(21600)
+    time.sleep(setime)
