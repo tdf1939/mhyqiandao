@@ -23,16 +23,20 @@ while 1:
         'Content-Type': 'application/json;charset=UTF-8'
     }
 
-    bh3 = requests.post(url, headers=headers, json=bh3payload)
-    ys = requests.post(url, headers=headers, json=yspayload)
-    bh2 = requests.post(url, headers=headers, json=bh2payload)
-    wd = requests.post(url, headers=headers, json=wdpayload)
-    dby = requests.post(url, headers=headers, json=dbypayload)
+    times = time.strftime('%Y.%m.%d %H:%M:%S ', time.localtime(time.time()))
 
-    print("Start... \n", bh3.text, "米游社-崩坏3\n", ys.text, "米游社-原神\n", bh2.text, "米游社-崩坏2\n", wd.text, "米游社-未定事件簿\n",
-          dby.text, "米游社-大别墅")
-    print("休眠六小时...")
+    print(times, "开始执行 Start...")
+    bh3 = requests.post(url, headers=headers, json=bh3payload)
+    print(times, "米游社-崩坏3回显", bh3.text)
+    ys = requests.post(url, headers=headers, json=yspayload)
+    print(times, "米游社-原神回显", ys.text)
+    bh2 = requests.post(url, headers=headers, json=bh2payload)
+    print(times, "米游社-崩坏2回显", bh2.text)
+    wd = requests.post(url, headers=headers, json=wdpayload)
+    print(times, "米游社-未定事件簿2回显", wd.text)
+    dby = requests.post(url, headers=headers, json=dbypayload)
+    print(times, "米游社-大别墅回显", dby.text)
+
+    print(times, "休眠六小时...")
 
     time.sleep(21600)
-
-
