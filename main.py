@@ -29,7 +29,7 @@ while 1:
         'Content-Type': 'application/json;charset=UTF-8'
     }
 
-    times = time.strftime('%Y.%m.%d %H:%M:%S ', time.localtime(time.time()))
+    times = time.strftime('%Y-%m-%d %H:%M:%S ', time.localtime(time.time()))
 
     print(times, "开始执行游戏社区签到,Start")
     bh3 = requests.post(url, headers=headers, json=bh3payload)
